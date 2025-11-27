@@ -1,0 +1,48 @@
+.home-overlay {
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: url("/images/home-img.png") no-repeat center center;
+  background-size: cover;
+}
+.home-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  z-index: 1;
+}
+.home-content {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 40vh;
+  z-index: 2;
+
+  .welcome-text {
+    user-select: none;
+    font-size: 1.3rem; /* móviles */
+  }
+
+  @media (min-width: 768px) {
+    .welcome-text {
+      font-size: 2rem; /* tablets */
+    }
+  }
+
+  @media (min-width: 992px) {
+    .welcome-text {
+      font-size: 3.5rem; /* escritorio */
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.5;
+  }
+}

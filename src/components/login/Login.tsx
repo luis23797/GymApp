@@ -1,20 +1,20 @@
 import { Col, FloatingLabel, Form, Row, Modal, Button } from "react-bootstrap";
-import { useEffect } from "react"
-import "./register.css"
-export const Register = ({ show, handleClose }: any) => {
-    useEffect(() => {
+import { useEffect } from "react";
+import "./login.css"
+export default function Login({show,handleClose}){
+     useEffect(() => {
         console.log("Abierto");
         return () => {
             console.log("Cerrado");
 
         }
     }, [])
-    return (
+     return (
         <Modal show={show} onHide={handleClose} size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
-                <Modal.Title>Registro de usuario</Modal.Title>
+                <Modal.Title>Inicio de sesion</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
@@ -27,28 +27,13 @@ export const Register = ({ show, handleClose }: any) => {
                                 <Form.Control type="text" placeholder="Edgar " className="shadow mb-3" />
                             </FloatingLabel>
                         </Col>
-                         <Col xs="12">
+
+                        <Col xs="12">
                             <FloatingLabel
                                 controlId="password"
                                 label="Password"
                             >
                                 <Form.Control type="secret" placeholder="" className="shadow mb-3" />
-                            </FloatingLabel>
-                        </Col>
-                        <Col xs="12">
-                            <FloatingLabel
-                                controlId="lastName"
-                                label="Apellido"
-                            >
-                                <Form.Control type="text" placeholder="Martinez Sanchez" className="shadow mb-3" />
-                            </FloatingLabel>
-                        </Col>
-                        <Col xs="12">
-                            <FloatingLabel
-                                controlId="phone"
-                                label="Telefono"
-                            >
-                                <Form.Control type="text" placeholder="3320458945" className="shadow mb-3" />
                             </FloatingLabel>
                         </Col>
                     </Row>
@@ -59,7 +44,7 @@ export const Register = ({ show, handleClose }: any) => {
                     Cerrar
                 </Button>
                 <Button variant="success" onClick={handleClose}>
-                    Registrar
+                    Iniciar sesion
                 </Button>
             </Modal.Footer>
         </Modal>
